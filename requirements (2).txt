@@ -1,0 +1,7 @@
+fastai
+timm
+torch==1.12.1
+langchain
+openai
+Wikipedia
+apikey
