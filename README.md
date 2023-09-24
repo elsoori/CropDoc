@@ -12,6 +12,6 @@ There were no publicly available datasets for this. Therefore, I used duckduckgo
 
 In the CropDoc ChatBot side of things, a Large Language model with Retrieval Augmented Generation(LLM with RAG) has been used. I used OpenAI and decided to use Wikipedia API to avoid hallucinations and receive up-to-date information. I was initially going to make a knowledge base by scraping websites on the 6 diseases I have classified, However, I thought it would be much better for scalability as well as the up-to-date information, to just use Wikipedia. That is the reason you will see the CSV file I created by scraping the webpage text and fitting it into Pandas dataframe. I used beautifulsoup to scape the text, and I was using Chroma for indexing purposes to embed the knowledge base into OpenAI when I decided to use Wikipedia.
 
-# Future direction
+## Future direction
 I wanted to add 2 layers of models where a zero shot classifier would be first used to classify if it's a plant or not and only classify the picture with the trained model, only if it's a valid image.
 I believe this is a useful application for farmers. In order to obtain increased accuracy, a properly labeled dataset needs to be made. I believe with the help of midwest agricultural universities as well as with the help of farmers, such a dataset could be compiled. I would like to use that database with bigger CNN models. Then I would classify all soybean diseases and from there, I can expand into other crops such as corn.
