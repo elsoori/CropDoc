@@ -1,7 +1,6 @@
 from fastai.vision.all import *
 import gradio as gr
 import os
-from apikey import apikey
 from langchain.agents import load_tools, initialize_agent, AgentType
 from langchain.llms import OpenAI
 
@@ -39,14 +38,16 @@ with gr.Blocks() as demo:
 
         # Initializing the LLM and the Toolset
         llm = OpenAI(temperature=0)
-        tools = load_tools(["wikipedia"], llm=llm)
+        tools = load_tools(["wikipedia"])
         agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)
 
         # Create an empty conversation history
         conversation_history = []
 
         def langchain_bot(prompt):
-            if prompt:
+            if prompt == 'clear':
+                conversation_history.clear()
+            elif prompt:
                 # Add the user's message to the conversation history
                 conversation_history.append({"role": "user", "content": prompt})
                 # Generate a response based on the entire conversation history
@@ -54,7 +55,8 @@ with gr.Blocks() as demo:
                 # Add the bot's response to the conversation history
                 conversation_history.append({"role": "bot", "content": text})
                 return text
-            return "Type a prompt to learn about the plant disease!"
+            else:
+                return "Type a prompt to learn about the plant disease!"
 
 
 
