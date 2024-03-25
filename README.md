@@ -1,6 +1,6 @@
 # CropDoc
  Your Toolkit to Growing Healthier Fields!
- In this project I classified images of 6 of the most common foliage diseases in soybeans as well as healthy soybean leaves(so there are 7 categories), and I have made the CropDpc ChatBot that retrieves information from Wikipedia about all the crop diseases you want to know about and also remembers the context of the message so that you can ask follow up questions.
+ In this project I classified images of 6 of the most common foliage diseases in soybeans as well as healthy soybean leaves(so there are 7 categories), and I have made the CropDoc ChatBot that retrieves information from Wikipedia about all the crop diseases you want to know about and also remembers the context of the message so that you can ask follow up questions.
 This project frontend was completed using Gradio and hosted on Hugging Spaces.
 
 Please find the app on: https://huggingface.co/spaces/elsoori/CropDocV1
